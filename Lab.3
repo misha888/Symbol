@@ -1,0 +1,85 @@
+#include <string.h>
+#include <iostream>
+
+using namespace std;
+
+void BaseLevel()
+{
+	//Введите масив символов из 10 элементов.Замените символы-цифры на символ "*"
+  int n = 3;
+    char arr[n];
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    for(int i = 0; i < n; i++){
+        if(arr[i] >= '0' && arr[i] <= '9'){
+            arr[i] = '*';
+        }
+    }
+    for(int i = 0; i < n; i++){
+        cout << arr[i];
+    }
+}
+void MiddleLevel()
+{
+	//Дан массив символов, содержащий число в двоичной системе счисления. Заменить каждое вхождение <i> на </i>, а каждое вхождение </i> на <#>
+ char a[] = {"awawkdwaklkdlkwalk akwldkwdlk i I /i i /I #"};
+    int len = strlen(a);
+    char arr[len * 2];
+    int arr_len = 0;
+
+
+    for(int i = 0; i <= len; i++){
+        if(a[i] == '/' && (a[i + 1] == 'i' || a[i + 1] == 'I')){
+            arr[arr_len] = '#';
+            arr_len++;
+            i++;
+        } else if(a[i] == 'i' || a[i] == 'I'){
+            arr[arr_len] = '/';
+            arr_len++;
+            arr[arr_len] = a[i];
+            arr_len++;
+        } else{
+            arr[arr_len] = a[i];
+            arr_len++;
+        }
+    }
+
+    for(int i = 0; i < arr_len; i++){
+        cout << arr[i];
+    }
+    }
+void HightLevel()
+{
+//Введите массив символов из 5 элементов. Определите ,является ли он палиндромом.
+int n = 5;
+    char arr[n];
+    char p[n];
+
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+
+    for(int i = 0; i < n; i++){
+        p[i] = arr[n - 1 - i];
+    }
+
+    int k = 1;
+    for(int i = 0; i < n; i++){
+        if(arr[i] != p[i]){
+            k = 0;
+        }
+    }
+    if(k == 1){
+        cout << "Yes";
+    }
+}
+	
+
+
+int main() {
+	BaseLevel();
+	MiddleLevel();
+  void HightLevel();
+	return 0;
+}
